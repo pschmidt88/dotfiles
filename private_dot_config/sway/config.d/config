@@ -240,8 +240,11 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+#
+# Screenshot
+#
+bindsym Print exec grim - | swappy -f -
 bindsym Shift+Ctrl+Print exec grim -g "$(slurp)" - | swappy -f -
-
 
 #
 # Volume
