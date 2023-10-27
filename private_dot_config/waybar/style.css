@@ -1,0 +1,166 @@
+@import "mocha.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: SpaceMono Nerd Font;
+    font-weight: 400;
+    font-size: 14px;
+    /* min-height: 20px; */
+}
+
+#waybar {
+    background: @base;
+    color: @text;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces {
+    margin-left: 7px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-right: 7px;
+    border-radius: 10px;
+    transition: none;
+    background: @surface0;
+}
+
+#workspaces button.active {
+    color: @teal;
+    border-top: 1px white;
+    border-bottom: 1px;
+}
+
+#workspaces button {
+    transition: none;
+    color: @lavender;
+    background: transparent;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#workspaces button.persistent {
+    color: @surface0;
+    font-size: 12px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border-radius: inherit;
+    color: #383c4a;
+    background: #7c818c;
+}
+
+#workspaces button.focused {
+    color: @teal;
+    border-radius: 1rem;
+}
+
+#clock,
+#memory,
+#cpu,
+#pulseaudio,
+#keyboard-state,
+#language,
+#temperature,
+#custom-power,
+#network,
+#custom-launcher,
+#tray,
+#battery
+{
+    margin: 7px 7px 7px 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    color: @text;
+    background: @surface0;
+}
+
+#custom-launcher {
+    color: @blue;
+    font-size: 24px;
+    padding-right: 14px;
+}
+
+#cpu {
+    color: @mauve;
+    /* padding-left: 0; */
+    margin-left: 0;
+    border-radius: 0 10 10 0;
+}
+
+#memory {
+    color: @mauve;
+    /* padding-right: 0; */
+    margin-right: 0;
+    border-radius: 10 0 0 10;
+}
+
+#language {
+    color: @maroon;
+}
+
+#temperature {
+    color: @flamingo;
+}
+
+#network {
+    color: @rosewater;
+}
+
+#clock {
+    color: @yellow;
+}
+
+#tray {
+    color: @green;
+}
+
+#mode {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+#pulseaudio {
+    color: @sky;
+}
+
+#custom-power {
+    background: @surface2;
+    font-size: 16px;
+}
+
+#tray {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+

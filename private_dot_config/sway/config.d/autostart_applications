@@ -1,0 +1,5 @@
+exec nm-applet --indicator
+
+exec mako
+
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
