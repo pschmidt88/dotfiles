@@ -21,18 +21,18 @@ set $menu fuzzel
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output DP-1 mode 1920x1080@119.982Hz position 1920,0
-output DP-1 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
+output DP-3 mode 1920x1080@119.982Hz position 1920,0
+output DP-3 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
 #output DP-1 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
 
-output DP-3 mode 1920x1080@60.000Hz position 3840,0
-output DP-3 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
+output DP-1 mode 1920x1080@60.000Hz position 0,0
+output DP-1 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
 
 # Second screen horizontal
 #output HDMI-A-1 mode 1920x1080@60Hz position 1920,0
 #output HDMI-A-1 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
 
-output eDP-1 mode 1920x1200@59.950Hz position 0,400
+output eDP-1 mode 1920x1200@59.950Hz position 3840,0
 output eDP-1 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
 
 #output DP-1 mode 1920x1080 transform 270
