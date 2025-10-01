@@ -8,7 +8,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term wezterm
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -21,21 +21,12 @@ set $menu fuzzel
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output DP-3 mode 1920x1080@119.982Hz position 1920,0
-output DP-3 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
-#output DP-1 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
-
-output DP-1 mode 1920x1080@60.000Hz position 0,0
-output DP-1 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
+output DP-2 mode 3440x1440@165.000Hz position 0,0
+output DP-2 bg ~/Pictures/Wallpapers/wallhaven-g8r373_3440x1440.png fill
 
 # Second screen horizontal
-#output HDMI-A-1 mode 1920x1080@60Hz position 1920,0
-#output HDMI-A-1 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
-
-output eDP-1 mode 1920x1200@59.950Hz position 3840,0
-output eDP-1 bg ~/Pictures/Wallpapers/wallhaven-73rzyo_1920x1200.png fill
-
-#output DP-1 mode 1920x1080 transform 270
+# output HDMI-A-1 mode 1920x1080@60Hz position 1920,0
+# output HDMI-A-1 bg ~/Pictures/Wallpapers/wallhaven-eomoew_1920x1080.png fill
 
 ## second screen vertical
 #output HDMI-A-1 mode 1920x1080@60Hz position 1920,0 transform 90
@@ -83,18 +74,12 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 
 input * {
-    xkb_layout "de"
-    xkb_variant "nodeadkeys"
+   # xkb_layout "de"
+   # xkb_variant "nodeadkeys"
 }
 
 input type:keyboard {
     xkb_numlock enabled
-}
-
-input type:touchpad {
-    dwt enabled
-    tap enabled
-    natural_scroll enabled
 }
 
 ### Key bindings
@@ -177,7 +162,7 @@ input type:touchpad {
     # We just use 1-10 as the default.
 
     bindsym $mod+Shift+x move workspace to output right
-    bindsym $mod+Shift+y move workspace to output left
+    bindsym $mod+Shift+z move workspace to output left
 #
 # Layout stuff:
 #
@@ -237,21 +222,22 @@ mode "resize" {
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
+
 }
 bindsym $mod+r mode "resize"
 
-#
-# Screenshot
-#
-bindsym Print exec grim - | swappy -f -
-bindsym Shift+Ctrl+Print exec grim -g "$(slurp)" - | swappy -f -
+
+bindsym $mod+Shift+r exec sway-resize -g 'a:h:+32 b:h:+64 c:h:+128 d:h:+256 e:h:+512 f:v:+32 g:v:+64 h:v:+128 i:v:+256 j:v:+512 k:h:-32 l:h:-64 m:h:-128 n:h:-256 o:h:-512 p:v:-32 q:v:-64 l:v:-128 m:v:-256 n:v:-512'
+
+#bindsym Shift+Ctrl+Print exec grim -g "$(slurp)" - | swappy -f -
+
 
 #
 # Volume
 #
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
 
 #
 # Player
@@ -261,6 +247,11 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec autotiling
+#
+# Screenshot
+#
+bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
+bindsym shift+print exec /usr/share/sway/scripts/grimshot --notify save area
+bindsym shift+ctrl+print exec /usr/share/sway/scripts/grimshot --notify copy area
 
-bindsym $mod+Shift+p exec 1password --quick-access
+exec autotiling

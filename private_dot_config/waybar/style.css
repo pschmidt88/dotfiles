@@ -73,8 +73,7 @@ window#waybar.hidden {
 #custom-power,
 #network,
 #custom-launcher,
-#tray,
-#battery
+#tray
 {
     margin: 7px 7px 7px 7px;
     padding-left: 10px;

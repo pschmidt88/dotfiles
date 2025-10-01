@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/launcher", "sway/workspaces", "mpris", "keyboard-state", "sway/mode"],
     "modules-center": [ "clock" ],
-    "modules-right": ["pulseaudio", "temperature", "memory", "cpu", "tray",  "battery", "sway/language", "custom/power"],
+    "modules-right": ["pulseaudio", "temperature", "memory", "cpu", "network", "tray", "sway/language", "custom/power"],
 
 
     //***************************
@@ -29,7 +29,6 @@
             "4": "󰒱",
             "5": "󰘔",
             "6": "󰓇",
-            "7": "󰻧",
             "10": "󰠮"
         }
     },
@@ -72,21 +71,21 @@
     "clock": {
         "timezone": "Europe/Berlin",
         "tooltip-format": "{:%Y-%m-%d}",
-        "format": "{:%A %b %d, %H:%M}",
-        "on-click": "firefox -new-tab https://calendar.google.com"
+        "format": "{:%Y-%m-%d %A %H:%M}",
+        "on-click": "vivaldi --password-store=gnome-libsecret -new-tab https://calendar.google.com"
     },
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "reverse-scrolling": 1,
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}% ",
-        "format-bluetooth-muted": " {icon} ",
-        "format-muted": " muted",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "婢 ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
-            "headset": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -115,6 +114,7 @@
         "tooltip": false,
     },
     "network": {
+        "interface": "wlp41s0",
         // "interface": "enp39s0", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         //"format-ethernet": "{ifname}: {ipaddr}/{cidr}",
@@ -126,7 +126,7 @@
 
     "tray": {
         "icon-size": 16,
-        "spacing": 8
+        "spacing": 0
     },
 
     "mpris": {
@@ -134,28 +134,13 @@
         "tooltip-format": "{title} - {artist} - {album}",
         "player-icons": {
             "spotify_player": "󰓇"
-        },
-        "max-length": 50
+        }
     },
 
     "custom/power": {
         "format": "󰐥",
        	"on-click": "nwg-bar",
       	"tooltip": false,
-     },
-
-     "battery": {
-        "format": "{capacity}% {icon} ",
-        "states": {
-            "critical": 10,
-            "warning": 25,
-            "ok": 50,
-            "good": 80,
-            "full": 100
-        },
-        "format-icons": [
-            "", "", "", "", ""
-        ]
      }
 }
 

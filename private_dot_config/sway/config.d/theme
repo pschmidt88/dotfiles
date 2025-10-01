@@ -1,7 +1,7 @@
 exec_always $HOME/.config/sway/scripts/import-gsettings
 
 # Gaps and borders
-gaps inner 0
+gaps inner 7
 gaps outer 0
 
 default_border pixel 1
@@ -20,3 +20,4 @@ client.background        $base
 bar {
     swaybar_command waybar
 }
+
