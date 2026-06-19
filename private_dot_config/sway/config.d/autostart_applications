@@ -1,3 +1,5 @@
 exec nm-applet --indicator
 
 exec mako
+
+exec vicinae server
