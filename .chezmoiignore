@@ -1,0 +1,11 @@
+README.md
+.config/tmux/plugins
+{{- if eq .chezmoi.hostname "Paul-SHC-MBP-M3" }}
+.config/dunst
+.config/fuzzel
+.config/gtk-3.0
+.config/nwg-bar
+.config/sway
+.config/swaylock
+.config/waybar
+{{- end }}
