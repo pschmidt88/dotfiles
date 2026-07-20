@@ -1,0 +1,13 @@
+[user]
+	name = {{ .name | quote }}
+	email = {{ .email | quote }}
+[push]
+	autoSetupRemote = 1
+
+{{- if eq .chezmoi.hostname "Paul-SHC-MBP-M3" }}
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+{{- end }}
