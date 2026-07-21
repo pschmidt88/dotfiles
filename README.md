@@ -1,6 +1,21 @@
 # dotfiles
 My dotfiles managed with [chezmoi](https://www.chezmoi.io)
 
+## installation
+
+- Install chezmoi
+
+### Provide chezmoi data
+
+Create `~/.config/chezmoi/chezmoi.toml` and add values:
+
+```toml
+[data]
+  name = ""
+  email = ""
+```
+
+
 ## software used
 
 - sway
