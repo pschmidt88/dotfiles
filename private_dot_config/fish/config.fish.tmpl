@@ -1,0 +1,47 @@
+set fish_greeting
+
+fish_add_path ~/.local/bin
+fish_add_path /usr/local/bin
+fish_add_path $HOME/.spicetify
+
+set -gx EDITOR "nvim"
+
+{{- if eq chezmoi.os "darwin" }}
+fish_add_path /opt/homebrew/bin
+set -gx HOMEBREW_PREFIX "/opt/homebrew/"
+{{- end }}
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+# pnpm
+set -gx PNPM_HOME "$HOME/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
+fzf
+fzf --fish | source
+
+{{- if eq .chezmoi.hostname "Paul-SHC-MBP-M3" }}
+set -gx DOCKER_HOST unix://$HOME/.colima/default/docker.sock
+set -gx TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE /var/run/docker.sock
+
+# TESTCONTAINERS_HOST_OVERRIDE is cached as a universal var so shell startup
+# doesn't shell out to `colima ls` every time. `colima start` (see
+# functions/colima.fish) refreshes it whenever colima actually (re)starts;
+# this just seeds it once if it's never been set. Run `colima-refresh-env`
+# if colima was restarted outside the wrapper (e.g. via `brew services`)
+# and the address goes stale.
+if not set -q TESTCONTAINERS_HOST_OVERRIDE
+    set -Ux TESTCONTAINERS_HOST_OVERRIDE (colima ls -j | jq -r '.address')
+end
+{{- end }}
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH $HOME/.lmstudio/bin
+# End of LM Studio CLI section
+
+starship init fish | source
