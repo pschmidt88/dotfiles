@@ -6,7 +6,7 @@ fish_add_path $HOME/.spicetify
 
 set -gx EDITOR "nvim"
 
-{{- if eq chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
 fish_add_path /opt/homebrew/bin
 set -gx HOMEBREW_PREFIX "/opt/homebrew/"
 {{- end }}
