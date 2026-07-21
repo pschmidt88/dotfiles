@@ -1,4 +1,9 @@
 README.md
+
+{{- if ne .chezmoi.hostname "Paul-SHC-MBP-M3" }}
+.config/aerospace
+{{- end}}
+
 {{- if eq .chezmoi.hostname "Paul-SHC-MBP-M3" }}
 .config/dunst
 .config/fuzzel
