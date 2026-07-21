@@ -2,6 +2,8 @@ README.md
 
 {{- if ne .chezmoi.hostname "Paul-SHC-MBP-M3" }}
 .config/aerospace
+.config/skhd
+.config/sketchybar
 {{- end}}
 
 {{- if eq .chezmoi.hostname "Paul-SHC-MBP-M3" }}
