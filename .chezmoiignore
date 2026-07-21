@@ -1,5 +1,4 @@
 README.md
-.config/tmux/plugins
 {{- if eq .chezmoi.hostname "Paul-SHC-MBP-M3" }}
 .config/dunst
 .config/fuzzel
