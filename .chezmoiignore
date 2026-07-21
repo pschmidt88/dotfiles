@@ -4,6 +4,7 @@ README.md
 .config/aerospace
 .config/skhd
 .config/sketchybar
+.config/borders
 {{- end}}
 
 {{- if eq .chezmoi.hostname "Paul-SHC-MBP-M3" }}
