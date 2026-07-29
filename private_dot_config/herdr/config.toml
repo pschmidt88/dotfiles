@@ -1,7 +1,7 @@
 [theme]
-name = "catppuccin-latte"
+name = "catppuccin"
 auto_switch = true
-dark_name = "catppuccin"
+dark_name = "catppuccin-frappe"
 light_name = "catppuccin-latte"
 
 [keys]
