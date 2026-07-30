@@ -51,6 +51,7 @@ nmap g] <Action>(GotoImplementation)
 nmap <leader>o <Action>(ActivateProjectToolWindow)
 nmap <leader>c <Action>(CloseContent)
 nmap <leader>l <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>g <Action>(GoToCodeGroup)
 nmap <leader>/ <Action>(CommentByLineComment)
 
 nmap <leader>% <Action>(SplitVertically)
