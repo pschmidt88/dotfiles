@@ -1,5 +1,10 @@
 README.md
 
+# LazyVim starter boilerplate -- not config, keep out of chezmoi
+.config/nvim/LICENSE
+.config/nvim/README.md
+.config/nvim/.gitignore
+
 {{- if ne .chezmoi.hostname "Paul-SHC-MBP-M3" }}
 .config/aerospace
 .config/skhd
