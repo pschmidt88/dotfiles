@@ -4,6 +4,7 @@ fish_add_path ~/.local/bin
 fish_add_path /usr/local/bin
 fish_add_path $HOME/.spicetify
 
+set -gx LANGUAGE en_US:en
 set -gx EDITOR "nvim"
 
 {{- if eq .chezmoi.os "darwin" }}
