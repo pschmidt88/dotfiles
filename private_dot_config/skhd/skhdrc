@@ -1,5 +1,6 @@
 # cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty 
-cmd - return : /Applications/WezTerm.app/Contents/MacOS/wezterm start tmux new -As0
+cmd - return : open -na Ghostty --args -e tmux new-session -A -s main
+cmd + shift - return : open -na Ghostty --args -e tmux new-session
 # cmd + shift - return : /Applications/Alacritty.app/Contents/MacOS/alacritty --command /opt/homebrew/bin/fish -l -c tmux new-session
 # cmd - p : /Applications/Obsidian.app/Contents/MacOS/Obsidian
 
