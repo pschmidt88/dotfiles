@@ -1,4 +1,7 @@
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
+
+local colors = require("themes.catppuccin-macchiato")
+
 hl.config({
 	general = {
 		gaps_in = 5,
@@ -7,8 +10,8 @@ hl.config({
 		border_size = 2,
 
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-			inactive_border = "rgba(595959aa)",
+			active_border = colors.mauve,
+			inactive_border = colors.crust,
 		},
 
 		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -17,7 +20,7 @@ hl.config({
 		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
 		allow_tearing = false,
 
-		layout = "dwindle",
+		layout = "diwndle",
 	},
 
 	decoration = {
@@ -32,7 +35,7 @@ hl.config({
 			enabled = true,
 			range = 4,
 			render_power = 3,
-			color = 0xee1a1a1a,
+			color = colors.crust,
 		},
 
 		blur = {
@@ -93,6 +96,12 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 --     border_size = 0,
 --     rounding    = 0,
 -- })
+
+hl.config({
+	layout = {
+		single_window_aspect_ratio = { 3, 2 },
+	},
+})
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({

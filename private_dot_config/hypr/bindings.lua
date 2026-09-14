@@ -2,6 +2,7 @@ local terminal = "ghostty"
 local browser = "zen-browser"
 local fileManager = "dolphin"
 local menu = "vicinae"
+
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
@@ -29,6 +30,14 @@ hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+
+hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
+
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.workspace.move({ monitor = "DP-2" }))
+hl.bind(mainMod .. " + SHIFT + Z", hl.dsp.workspace.move({ monitor = "DP-1" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
