@@ -1,7 +1,7 @@
 local terminal = "ghostty"
 local browser = "zen-browser"
 local fileManager = "dolphin"
-local menu = "vicinae"
+local menu = "vicinae toggle"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
