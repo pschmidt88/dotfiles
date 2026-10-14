@@ -10,3 +10,8 @@ require("permissions")
 require("autostart")
 
 require("window-rules")
+
+-- Everything in these directories is loaded automatically;
+-- drop new per-app/per-game config files in there, no edits needed here.
+require("./apps/*")
+require("./apps/games/*")

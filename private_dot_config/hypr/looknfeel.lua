@@ -99,7 +99,7 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 
 hl.config({
 	layout = {
-		single_window_aspect_ratio = { 3, 2 },
+		single_window_aspect_ratio = { 16, 9 },
 	},
 })
 
