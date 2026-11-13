@@ -44,7 +44,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 exec-on-workspace-change = [
   "/bin/bash", "-c",
-  "~/.config/aerospace/ultrawide.sh; sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE"
+  # "~/.config/aerospace/ultrawide.sh; sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE"
+  "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE"
 ]
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
@@ -57,10 +58,10 @@ exec-on-workspace-change = [
 [gaps]
 inner.horizontal = 15
 inner.vertical =   15
-    outer.left =       [{ monitor."G34" = 430 }, 20]
+    outer.left =       20
 outer.bottom =     20
 outer.top =        20
-    outer.right =      [{ monitor."G34" = 430 }, 20]
+    outer.right =      20
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -209,12 +210,6 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 
-
-
-[[on-window-detected]]
-if.app-id = 'com.philipyoungg.session'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.iCal'
-run = ['layout floating']
+# [[on-window-detected]]
+# if.app-id = 'com.apple.iCal'
+# run = ['layout floating']
